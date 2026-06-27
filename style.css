@@ -1,0 +1,146 @@
+body {
+    background-color: #fcfaf7;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #333333;
+}
+
+
+.branding-text {
+    letter-spacing: 1px;
+    color: #e28f83 !important;
+}
+
+
+.active-link {
+    color: #e28f83 !important;
+    font-weight: 600;
+}
+
+.main-slider-img {
+    height: 440px;
+    object-fit: cover;
+}
+
+.btn-rose-pink {
+    background-color: #e28f83; 
+    color: #ffffff;
+    font-weight: 500;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-rose-pink:hover {
+    background-color: #d17e72; 
+    transform: translateY(-1px);
+}
+
+.custom-arrows {
+    filter: invert(1) sepia(20%) saturate(1000%) hue-rotate(330deg);
+    opacity: 0.8;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #e28f83 !important; 
+}
+
+
+.py-2-5 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+.card {
+    background-color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+
+.bg-soft-pink {
+    background-color: #fbeceb;
+    color: #e28f83 !important;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+
+
+.item-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(226, 143, 131, 0.15) !important; 
+}
+
+
+.item-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.theme-badge {
+    background-color: #fbeceb !important;
+    color: #e28f83 !important;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 50px;
+}
+
+#search-input {
+    border: 1px solid #ebdcd5;
+    background-color: #ffffff;
+}
+
+#search-input:focus {
+    border-color: #e28f83;
+    box-shadow: 0 0 0 0.25rem rgba(226, 143, 131, 0.25);
+}
+
+
+
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f3eae1;
+}
+
+.cart-row:last-child {
+    border-bottom: none;
+}
+
+.text-primary-color {
+    color: #e28f83;
+}
+
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ebdcd5;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-remove {
+    color: #dc3545;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    text-decoration: underline;
+}

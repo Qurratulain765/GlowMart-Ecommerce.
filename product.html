@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowMart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold branding-text" href="index.html">GlowMart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#shopNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="shopNav">
+                <ul class="navbar-nav ms-auto fw-medium">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active-link" href="product.html">Shop</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            Cart (<span id="nav-cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-2">
+        <div class="row g-3 align-items-center justify-content-between">
+            <div class="col-md-6">
+                <button class="btn btn-dark rounded-pill px-3 me-2" onclick="filterItems('all')">All</button>
+                <button class="btn btn-outline-dark rounded-pill px-3 me-2" onclick="filterItems('fashion')">Fashion</button>
+                <button class="btn btn-outline-dark rounded-pill px-3" onclick="filterItems('cosmetics')">Cosmetics</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="search-input" class="form-control rounded-pill border-secondary" placeholder="Search products...">
+            </div>
+        </div>
+    </div>
+
+    <section class="container mb-5">
+    <div class="row g-4" id="products-row">
+
+   <div class="col-sm-6 col-md-4 product-item" data-category="fashion">
+    <div class="card h-100 item-card border-0 shadow-sm p-2 bg-white rounded-4">
+        <img src="./assets/US$ 23,39 SHEIN Paid link.jpg" 
+             class="card-img-top rounded-3 item-img"
+             alt="Classic Summer Dress"
+             style="cursor: pointer;"
+             onclick="showProductDetail('Classic Summer Dress', 45.00, 'Lightweight cotton pink summer casual dress tailored perfectly for everyday comfort and warm sunny days.', './assets/US$ 23,39 SHEIN Paid link.jpg')">
+
+        <div class="card-body px-2 pt-3 pb-1">
+            <span class="badge theme-badge mb-2">Fashion</span>
+
+            <h5 class="card-title fw-bold text-dark fs-6 mb-1">
+                Classic Summer Dress
+            </h5>
+
+            <p class="card-text text-muted small mb-3">
+                Lightweight cotton pink summer casual dress for everyday comfort.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-dark fs-5">$45.00</span>
+
+                <button class="btn btn-rose-pink btn-sm rounded-pill px-3"
+                    onclick="handleAddToCart(1,'Classic Summer Dress',45,'./assets/US$ 23,39 SHEIN Paid link.jpg')">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="col-sm-6 col-md-4 product-item" data-category="cosmetics">
+            <div class="card h-100 item-card border-0 shadow-sm p-2 bg-white rounded-4">
+                <img src="./assets/Warm Terracotta Matte Lipstick – Blissy Boxx Velvet Matte Collection.jpg"
+                     class="card-img-top rounded-3 item-img"
+                     alt="Matte Velvet Lipstick"
+                     style="cursor: pointer;"
+                     onclick="showProductDetail('Matte Velvet Lipstick', 18.00, 'Long-lasting hydration and smooth texture rich rose shade velvet lipstick that stays beautiful all day long.', './assets/Warm Terracotta Matte Lipstick – Blissy Boxx Velvet Matte Collection.jpg')">
+
+                <div class="card-body px-2 pt-3 pb-1">
+                    <span class="badge theme-badge mb-2">Cosmetics</span>
+                    <h5 class="card-title fw-bold text-dark fs-6 mb-1">Matte Velvet Lipstick</h5>
+                    <p class="card-text text-muted small mb-3">
+                        Long-lasting hydration and smooth texture rose shade velvet lipstick.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-dark fs-5">$18.00</span>
+                        <button class="btn btn-rose-pink btn-sm rounded-pill px-3"
+                            onclick="handleAddToCart(2,'Matte Velvet Lipstick',18,'./assets/Warm Terracotta Matte Lipstick – Blissy Boxx Velvet Matte Collection.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 product-item" data-category="fashion">
+            <div class="card h-100 item-card border-0 shadow-sm p-2 bg-white rounded-4">
+                <img src="./assets/Sudadera holgada de estampado digital colorido, un gran regalo para amigos.jpg"
+                     class="card-img-top rounded-3 item-img"
+                     alt="Pastel Casual Hoodie"
+                     style="cursor: pointer;"
+                     onclick="showProductDetail('Pastel Casual Hoodie', 35.00, 'Soft premium fleece warm hoodie with high-quality colorful digital print design perfect for a relaxed aesthetic look.', './assets/Sudadera holgada de estampado digital colorido, un gran regalo para amigos.jpg')">
+
+                <div class="card-body px-2 pt-3 pb-1">
+                    <span class="badge theme-badge mb-2">Fashion</span>
+                    <h5 class="card-title fw-bold text-dark fs-6 mb-1">Pastel Casual Hoodie</h5>
+                    <p class="card-text text-muted small mb-3">
+                        Soft premium fleece warm hoodie perfect for a relaxed aesthetic look.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-dark fs-5">$35.00</span>
+                        <button class="btn btn-rose-pink btn-sm rounded-pill px-3"
+                            onclick="handleAddToCart(3,'Pastel Casual Hoodie',35,'./assets/Sudadera holgada de estampado digital colorido, un gran regalo para amigos.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 product-item" data-category="cosmetics">
+            <div class="card h-100 item-card border-0 shadow-sm p-2 bg-white rounded-4">
+                <img src="./assets/Skin Care Essentials_ Vitamin C and Hyaluronic Serum for Brighter Skin.jpg"
+                     class="card-img-top rounded-3 item-img"
+                     alt="Glow Hydrating Serum"
+                     style="cursor: pointer;"
+                     onclick="showProductDetail('Glow Hydrating Serum', 24.00, 'Organic premium face serum infused with Vitamin C and Hyaluronic acid for natural radiating skin and healthy deep hydration.', './assets/Skin Care Essentials_ Vitamin C and Hyaluronic Serum for Brighter Skin.jpg')">
+
+                <div class="card-body px-2 pt-3 pb-1">
+                    <span class="badge theme-badge mb-2">Cosmetics</span>
+                    <h5 class="card-title fw-bold text-dark fs-6 mb-1">Glow Hydrating Serum</h5>
+                    <p class="card-text text-muted small mb-3">
+                        Organic face serum for natural radiating skin and healthy hydration glow.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-dark fs-5">$24.00</span>
+                        <button class="btn btn-rose-pink btn-sm rounded-pill px-3"
+                            onclick="handleAddToCart(4,'Glow Hydrating Serum',24,'./assets/Skin Care Essentials_ Vitamin C and Hyaluronic Serum for Brighter Skin.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 product-item" data-category="fashion">
+            <div class="card h-100 item-card border-0 shadow-sm p-2 bg-white rounded-4">
+                <img src="./assets/Woven Tote Bag, Straw Style Shoulder Bag, Handmade Look Handbag, Large Capacity Women Bag, Summer Beach Bag, Boho Chic Purse.jpg"
+                     class="card-img-top rounded-3 item-img"
+                     alt="Woven Summer Tote Bag"
+                     style="cursor: pointer;"
+                     onclick="showProductDetail('Woven Summer Tote Bag', 29.00, 'Beautiful straw style handmade look shoulder bag with large capacity capacity, perfect for summer beach days or boho chic fashion.', './assets/Woven Tote Bag, Straw Style Shoulder Bag, Handmade Look Handbag, Large Capacity Women Bag, Summer Beach Bag, Boho Chic Purse.jpg')">
+
+                <div class="card-body px-2 pt-3 pb-1">
+                    <span class="badge theme-badge mb-2">Fashion</span>
+                    <h5 class="card-title fw-bold text-dark fs-6 mb-1">Woven Summer Tote Bag</h5>
+                    <p class="card-text text-muted small mb-3">
+                        Spacious beach style handbag for carrying all your essentials easily.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-dark fs-5">$29.00</span>
+                        <button class="btn btn-rose-pink btn-sm rounded-pill px-3"
+                            onclick="handleAddToCart(5,'Woven Summer Tote Bag',29,'./assets/Woven Tote Bag, Straw Style Shoulder Bag, Handmade Look Handbag, Large Capacity Women Bag, Summer Beach Bag, Boho Chic Purse.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 product-item" data-category="cosmetics">
+            <div class="card h-100 item-card border-0 shadow-sm p-2 bg-white rounded-4">
+                <img src="./assets/Huda Beauty nude.jpg"
+                     class="card-img-top rounded-3 item-img"
+                     alt="Nude Eyeshadow Palette"
+                     style="cursor: pointer;"
+                     onclick="showProductDetail('Nude Eyeshadow Palette', 32.00, '12 highly pigmented pro-level matte and shimmer shades with extremely smooth and easily blendable texture.', './assets/Huda Beauty nude.jpg')">
+
+                <div class="card-body px-2 pt-3 pb-1">
+                    <span class="badge theme-badge mb-2">Cosmetics</span>
+                    <h5 class="card-title fw-bold text-dark fs-6 mb-1">Nude Eyeshadow Palette</h5>
+                    <p class="card-text text-muted small mb-3">
+                        12 highly pigmented matte shades with smooth and blendable texture.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-dark fs-5">$32.00</span>
+                        <button class="btn btn-rose-pink btn-sm rounded-pill px-3"
+                            onclick="handleAddToCart(6,'Nude Eyeshadow Palette',32,'./assets/Huda Beauty nude.jpg')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <footer class="bg-white border-top py-3 text-center mt-auto">
+        <div class="container">
+            <p class="text-muted mb-0 small">&copy; 2026 GlowMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
